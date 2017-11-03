@@ -125,6 +125,7 @@ function endGame() {
 }
 
 function moveDodger(e) {
+  var key = e.which
   // implement me!
   /**
    * This function should call `moveDodgerLeft()`
@@ -133,6 +134,16 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
+  if (key === LEFT_ARROW || key === RIGHT_ARROW) {
+    e.preventDefault()
+    e.stopPropagation()
+  }
+     
+  if (key === LEFT_ARROW) {
+    moveDodgerLeft()
+  } else if (key === RIGHT_ARROW) {
+    moveDodgerRight()
+  }  
 }
 
 function moveDodgerLeft() {
